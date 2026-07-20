@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioScan Pro - DNA Sequence Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="app-header">
+            <div class="dna-icon-placeholder">🧬</div>
+            <h1>BIOMEDICAL ANALYSIS LAB</h1>
+            <p class="subtitle">Automated DNA Sequencing & Quality Control System</p>
+        </header>
+
+        <main class="analyzer-section">
+            <div class="card">
+                <h3>Genomic Sequence Input</h3>
+                <p class="instruction">Please enter the patient's DNA sequence (Only A, T, G, C variants are accepted). Gaps will be automatically cleaned.</p>
+                
+                <form id="dnaForm">
+                    <textarea 
+                        id="dnaInput" 
+                        placeholder="Paste your raw internet sequence here... (e.g., ATG GCC CTG...)" 
+                        rows="6" 
+                        required></textarea>
+                    
+                    <button type="submit" id="scanBtn">RUN ANALYSIS 🚀</button>
+                </form>
+            </div>
+
+            <div class="card result-card" id="resultDashboard">
+                <h3><span class="report-icon">📊</span> Analysis Report</h3>
+                <hr class="divider">
+                <div class="report-grid">
+                    <div class="report-item"><strong>Cleaned DNA:</strong> <span id="resDNA" class="dna-text">-</span></div>
+                    <div class="report-item"><strong>Sequence Length:</strong> <span id="resLength">-</span></div>
+                    <div class="report-item"><strong>Starts with ATG Codon:</strong> <span id="resStart">-</span></div>
+                    <div class="report-item"><strong>Ends with TAA Codon:</strong> <span id="resEnd">-</span></div>
+                    <div class="report-item"><strong>No Corrupted Numbers:</strong> <span id="resValid">-</span></div>
+                    <div class="report-item"><strong>Core Signature [3:9]:</strong> <span id="resSignature" class="signature-text">-</span></div>
+                </div>
+            </div>
+        </main>
+
+        <hr class="section-divider">
+
+        <footer class="about-section">
+            <div class="about-card">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About The Developer</h2>
+                        <p>Hi, I am a digital creator, web designer, and science enthusiast. Merging the worlds of biology and computer science, I build smart digital tools to simplify complex genomic data processing.</p>
+                        <p class="specialty">⚡ Specialization: Frontend UI/UX | Python Basics | Bioinformatics Tools</p>
+                    </div>
+                    <div class="profile-img-container">
+                        <img src="profile.png" alt="Developer Profile" id="profileImg">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>
